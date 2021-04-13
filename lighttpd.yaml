@@ -1,0 +1,72 @@
+- hosts: web
+  become: yes
+  tasks:
+  - name: "apt-get update"
+    apt:
+      update_cache: yes
+      cache_valid_time: 36000
+
+  - name: "install aptitude"
+    apt:
+      name: ['aptitude']
+      state: latest
+
+  - name: "aptidue update"
+    aptitude:
+      update_cache: yes
+      cache_valid_time: 3600
+    
+  -name: ""
+    
+  - name: "install lighttpd"
+    aptitude:
+      name: ['lighttpd']
+      state: latest
+  - name: "enable ufw"
+    service:
+      name: ['ufw']
+      state: enabled
+      state: started
+  
+  - name: "set firewall rules"
+    # ufw: 
+      #s tate: enabled
+      # policy: deny
+
+      state: enabled
+      rule: limit
+      port: ssh
+      proto: tcp
+
+    ufw:
+      rule: allow
+      port: 22
+      proto: tcp
+
+    ufw:
+      rule: allow
+      port: 80
+      proto: tcp
+
+  - name: "create www directory"
+    file:
+      path: /var/www/
+      state: directory
+      mode: '0775'
+      owner: "{{ web_user }}"
+      group: "{{ web_group }}"
+
+  - name: copy httpd config
+    template:
+      src: lighttpd.conf
+      dest: /etc/lighttpd/lighttpd.conf
+      owner: root
+      group: root
+      mode: '0644'
+    notify: restart lighttpd
+
+  handlers:
+    - name: restart lighttpd
+      service:
+        name: lighttpd
+        state: restarted
