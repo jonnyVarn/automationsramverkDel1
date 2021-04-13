@@ -20,6 +20,7 @@
     aptitude:
       name: ['lighttpd']
       state: latest
+      
   - name: "enable ufw"
     service:
       name: ['ufw']
@@ -110,9 +111,9 @@ server.modules += (
 }}" > /etc/lighttpd.conf
 
 
-  - name: copy httpd config
+  - name: set httpd config mode
     template:
-      src: lighttpd.conf
+      src: /etc/lighttpd/lighttpd.conf
       dest: /etc/lighttpd/lighttpd.conf
       owner: root
       group: root
