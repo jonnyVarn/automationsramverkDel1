@@ -28,7 +28,7 @@
       state: started
   
   - name: "set firewall rules"
-    # ufw: 
+    ufw: 
       #s tate: enabled
       # policy: deny
 
