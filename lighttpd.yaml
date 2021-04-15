@@ -45,8 +45,9 @@
       mode: '0775'
       owner: "web_user"
       group: "web_group"
-- name: "create an index and a config file"
-  shell: -a echo '<html> <body> <h1> This is a website </h1></body></html>' > /var/www/index.hmtl
+
+  - name: "create an index and a config file"
+    shell: -a echo '<html> <body> <h1> This is a website </h1></body></html>' > /var/www/index.hmtl
  
   #- name: "set httpd config mode"
   #  template:
