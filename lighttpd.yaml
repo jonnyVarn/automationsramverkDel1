@@ -21,11 +21,7 @@
       name: ['lighttpd']
       state: latest
       
-  - name: "enable ufw"
-    service:
-      name: ['ufw']
-      state: enabled
-      state: started
+
   
   - name: "set firewall rules"
     ufw:
@@ -38,6 +34,11 @@
       rule: allow
       port: 80
       proto: tcp
+      
+   - name: "enable ufw"
+    service:
+      name: ['ufw']
+      state: enabled
       state: restarted
 
   - name: "create www directory"
