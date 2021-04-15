@@ -48,7 +48,7 @@
 
   - name: "create an index and a config file"
     shell: rm /var/www/index.html -y
-    shell: echo '<!DOCTYPE html>' 
+    shell: echo '<!DOCTYPE html>'  > /var/www/index.hmtl 
     shell: echo '<html> <body> <h1> This is a website </h1></body></html>' >> /var/www/index.hmtl
     
  
