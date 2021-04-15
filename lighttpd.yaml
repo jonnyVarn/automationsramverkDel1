@@ -8,7 +8,7 @@
 
   - name: "install aptitude"
     apt:
-      name: ['aptitude']
+      name: "aptitude"
       state: latest
 
   - name: "aptidue update"
