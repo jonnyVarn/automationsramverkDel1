@@ -11,7 +11,7 @@
       name: "aptitude"
       state: latest
 
-  - name: "aptidue update"
+  - name: "aptitude update"
     aptitude:
       update_cache: yes
       cache_valid_time: 3600
@@ -28,21 +28,14 @@
       state: started
   
   - name: "set firewall rules"
-    ufw: 
-      #s tate: enabled
-      # policy: deny
-
+    ufw:
       state: enabled
       rule: limit
       port: ssh
       proto: tcp
-
-    ufw:
       rule: allow
       port: 22
       proto: tcp
-
-    ufw:
       rule: allow
       port: 80
       proto: tcp
