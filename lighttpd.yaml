@@ -12,7 +12,7 @@
       state: latest
     
   - name: "install lighttpd"
-    aptitude:
+    apt:
       name: ['lighttpd']
       state: latest
       
