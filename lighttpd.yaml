@@ -40,7 +40,7 @@
 
   - name: "create www directory"
     file:
-      path: /var/www/
+      path: /var/www/html/
       state: directory
       mode: '0775'
       owner: "web_user"
