@@ -40,12 +40,12 @@
       proto: tcp
   
    -name: "enable ufw"
-      ufw:
-        state: enabled
+    ufw:
+      state: enabled
   
   -name: "restart ufw"
-    ufw:
-      state: restarted
+   ufw:
+     state: restarted
   
 
   - name: "create www directory"
