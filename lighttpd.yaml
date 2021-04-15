@@ -48,7 +48,7 @@
 
   - name: "create an index and a config file"
     shell: rm /var/www/html/index.html -y ; echo '<!DOCTYPE html>'  > /var/www/html/index.hmtl ; echo '<html> <body> <h1> This is a website </h1></body></html>' >> /var/www/html/index.hmtl
-    
+    notify: restart lighttpd
  
   #- name: "set httpd config mode"
   #  template:
