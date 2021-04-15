@@ -38,13 +38,13 @@
      state: reloaded
   
 
-  - name: "create www directory"
-    file:
-      path: /var/www/
-      state: directory
-      mode: '0775'
-      owner: "web_user"
-      group: "web_group"
+  #- name: "create www directory"
+  #  file:
+  #    path: /var/www/
+  #    state: directory
+  #    mode: '0775'
+  #    owner: "web_user"
+  #    group: "web_group"
 
   - name: "create an index and a config file"
     shell: -a echo '<html> <body> <h1> This is a website </h1></body></html>' > /var/www/index.hmtl
