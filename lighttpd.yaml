@@ -50,14 +50,15 @@
   - name: "create an index and a config file"
     shell: rm /var/www/html/* ; echo '<!DOCTYPE html>'  > /var/www/html/index.hmtl ; echo '<html> <body> <h1> This is a website </h1></body></html>' >> /var/www/html/index.hmtl
     notify: restart lighttpd
- 
+  
   - name: "set permissions on index.html"  
     file:
-      dst: /var/www/html/index.html
+      path: "/var/www/html/index.html"
+      state: file
       mode: '0775'
       owner: "www-data"
       group: "www-data"
-      state: file
+      become: yes
         
   #- name: "set httpd config mode"
   #  template:
