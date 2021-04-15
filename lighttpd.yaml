@@ -24,7 +24,7 @@
   - name: "enable ufw"
     service:
       name: ['ufw']
-      state: enabled
+      #state: enabled
       state: started
   
   - name: "set firewall rules"
