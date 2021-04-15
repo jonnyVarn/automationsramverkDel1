@@ -24,12 +24,11 @@
   - name: "enable ufw"
     service:
       name: ['ufw']
-      #state: enabled
+      state: enabled
       state: started
   
   - name: "set firewall rules"
     ufw:
-      state: enabled
       rule: limit
       port: ssh
       proto: tcp
@@ -39,6 +38,7 @@
       rule: allow
       port: 80
       proto: tcp
+      state: restarted
 
   - name: "create www directory"
     file:
