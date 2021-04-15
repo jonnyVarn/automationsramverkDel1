@@ -58,7 +58,7 @@
       mode: '0775'
       owner: "www-data"
       group: "www-data"
-      become: yes
+    
         
   #- name: "set httpd config mode"
   #  template:
