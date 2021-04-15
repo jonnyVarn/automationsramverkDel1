@@ -39,11 +39,11 @@
       port: 80
       proto: tcp
   
-  -name: "enable ufw"
+  - name: "enable ufw"
     ufw:
       state: enabled  
   
-  -name: "restart ufw"
+  - name: "restart ufw"
    ufw:
      state: restarted
   
