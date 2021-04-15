@@ -53,10 +53,10 @@
  
  - name: "set permissions on index.html"
     file:
-    path: /var/www/html/index.html
-    mode: '0755'
-    owner: "www-data"
-    group: "www-data"
+      path: /var/www/html/index.html
+      mode: '0755'
+      owner: "www-data"
+      group: "www-data"
     
     
   #- name: "set httpd config mode"
