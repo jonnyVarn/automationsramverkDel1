@@ -28,11 +28,13 @@
       proto: tcp
       
   - name: "firewall allow ssh"
+    ufw:
       rule: allow
       port: 22
       proto: tcp
       
   - name: "firewall allow http"
+    ufw:  
       rule: allow
       port: 80
       proto: tcp
