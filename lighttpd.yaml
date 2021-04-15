@@ -57,8 +57,8 @@
       mode: '0775'
       owner: "www-data"
       group: "www-data"
-    
-    
+      state: file
+        
   #- name: "set httpd config mode"
   #  template:
   #    src: "/etc/lighttpd/lighttpd.conf"
