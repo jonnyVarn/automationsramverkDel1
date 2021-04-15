@@ -10,11 +10,6 @@
     apt:
       name: "aptitude"
       state: latest
-
-  - name: "aptitude update"
-    aptitude:
-      update_cache: yes
-      cache_valid_time: 3600
     
   - name: "install lighttpd"
     aptitude:
