@@ -36,10 +36,10 @@
       proto: tcp
       
    - name: "enable ufw"
-    service:
-      name: ['ufw']
-      state: enabled
-      state: restarted
+      service:
+        name: ['ufw']
+        state: enabled
+        state: restarted
 
   - name: "create www directory"
     file:
