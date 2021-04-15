@@ -54,7 +54,7 @@
   - name: "set permissions on index.html"
     file:
       path: /var/www/html/index.html
-      mode: '0755'
+      mode: '0775'
       owner: "www-data"
       group: "www-data"
     
