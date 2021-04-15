@@ -51,9 +51,9 @@
     shell: rm /var/www/html/* ; echo '<!DOCTYPE html>'  > /var/www/html/index.hmtl ; echo '<html> <body> <h1> This is a website </h1></body></html>' >> /var/www/html/index.hmtl
     notify: restart lighttpd
  
-  - name: "set permissions on index.html"
+  - name: "set permissions on index.html"  
     file:
-      path: /var/www/html/index.html
+      dst: /var/www/html/index.html
       mode: '0775'
       owner: "www-data"
       group: "www-data"
