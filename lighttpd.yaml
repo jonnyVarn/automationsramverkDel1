@@ -44,7 +44,7 @@
       state: enabled  
   
   - name: "restart ufw"
-   ufw:
+    ufw:
      state: restarted
   
 
