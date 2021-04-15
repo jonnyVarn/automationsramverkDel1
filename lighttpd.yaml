@@ -21,18 +21,32 @@
       name: ['lighttpd']
       state: latest
       
-  - name: "set firewall rules"
+  - name: "firewall limit ssh"
     ufw:
       rule: limit
       port: ssh
       proto: tcp
+      
+  - name: "firewall allow ssh"
       rule: allow
       port: 22
       proto: tcp
+      
+  - name: "firewall allow http"
       rule: allow
       port: 80
       proto: tcp
-      state: restarted
+  
+   -name: "enable ufw"
+      service:
+        name: ufw
+          state: enabled
+  
+  -name: "restart ufw"
+      service:
+        name: ufw
+          state: restarted
+  
 
   - name: "create www directory"
     file:
