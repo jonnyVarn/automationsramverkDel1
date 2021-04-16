@@ -1,1 +1,1 @@
-ansible-playbook -i hosts.yml 
+ansible-playbook -i hosts.yaml lighttpd.yaml
