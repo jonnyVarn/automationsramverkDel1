@@ -48,7 +48,7 @@
       recurse: yes
       
   - name: "create an index and a config file"
-    shell: rm /var/www/html/* ; echo '<!DOCTYPE html>'  > /var/www/html/index.hmtl ; echo '<html> <body> <h1> This is a website </h1></body></html>' >> /var/www/html/index.hmtl ; chown -R www-data /var/www/html/ ; chmod - R 0755 /var/www/html/
+    shell: rm /var/www/html/* ; echo '<!DOCTYPE html>'  > /var/www/html/index.hmtl ; echo '<html> <body> <h1> This is a website </h1></body></html>' >> /var/www/html/index.hmtl ; chown -R www-data:www-data /var/www/html/ ; chmod  0755 /var/www/html/
     notify: restart lighttpd
   
    
